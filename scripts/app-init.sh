@@ -49,3 +49,19 @@ npm add -D babel-plugin-transform-es2015-modules-commonjs
 # git init
 # git add -A
 # git commit -m [Initial]
+
+## Electron
+npm add -D electron
+npm add -D electron-builder
+npm add -D electron-devtools-installer
+
+npm add electron-is-dev
+npm add electron-publisher-s3
+
+## Other tools
+npm add -D concurrently
+npm add -D cross-env
+npm add -D version-bump-prompt
+npm add -D wait-on
+
+

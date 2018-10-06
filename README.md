@@ -9,3 +9,6 @@ npx ./scripts/app-init.sh
 * babel@7
 * sass (scss) support
 * jest@^23.6.0
+
+npx webpack-dev-server --mode=development 
+npx wait-on http://localhost:3000 && npx electron .
