@@ -4,6 +4,16 @@ const { TouchBarButton, TouchBarLabel, TouchBarSpacer } = TouchBar;
 const path = require('path');
 const isDev = require('electron-is-dev');
 
+if(isDev){ process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true }
+/*
+  From Electron 2.0 on, developers will see warnings and recommendations printed to the developer
+  console. They only show up when the binary's name is Electron, indicating that a developer is
+  currently looking at the console.
+  You can force-enable or force-disable these warnings by setting ELECTRON_ENABLE_SECURITY_WARNINGS
+  or ELECTRON_DISABLE_SECURITY_WARNINGS on either process.env or the window object.
+  ref: https://electronjs.org/docs/tutorial/security#electron-security-warnings
+ */
+
 let mainWindow;
 
 createWindow = () => {
@@ -15,6 +25,13 @@ createWindow = () => {
     webPreferences: {
       nodeIntegration: false,
       preload: __dirname + '/preload.js',
+      /*
+        preload String (optional) - Specifies a script that will be loaded before other scripts run
+        in the page. This script will always have access to node APIs no matter whether node
+        integration is turned on or off. The value should be the absolute file path to the script.
+        When node integration is turned off, the preload script can reintroduce Node global symbols
+        back to the global scope.
+      */
     },
     height: 860,
     width: 1280,
@@ -41,6 +58,8 @@ createWindow = () => {
         console.log('An error occurred: ', err);
       });
 
+    // ## uncomment the next lines if you need redux-devtul involved while development
+    /*
     installExtension(REDUX_DEVTOOLS)
       .then(name => {
         console.log(`Added Extension: ${name}`);
@@ -48,6 +67,7 @@ createWindow = () => {
       .catch(err => {
         console.log('An error occurred: ', err);
       });
+    */
   }
 
   mainWindow.once('ready-to-show', () => {

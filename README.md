@@ -1,6 +1,8 @@
 ```sh
 git clone https://github.com/dkarmalita/template-react.git
 npx ./scripts/app-init.sh
+npm run dev # in-browser
+npm start # in-electron
 # npx ./scripts/app-clean.sh
 ```
 
