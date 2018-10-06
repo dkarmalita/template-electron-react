@@ -21,7 +21,7 @@ createWindow = () => {
     backgroundColor: '#F7F7F7',
     minWidth: 880,
     show: false,
-    titleBarStyle: 'hidden',
+    titleBarStyle: 'default', // 'default' | 'hidden' | 'hiddenInset' | 'customButtonsOnHover'
     webPreferences: {
       nodeIntegration: false,
       preload: __dirname + '/preload.js',
