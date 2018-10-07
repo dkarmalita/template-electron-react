@@ -6,6 +6,7 @@ npx ./scripts/app-init.sh
 npm run dev # in-browser
 npm start # in-electron
 # npx ./scripts/app-clean.sh
+# npx ./scripts/commit-all.sh
 ```
 
 ## Scripts
