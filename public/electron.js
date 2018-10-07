@@ -18,7 +18,7 @@ let mainWindow;
 
 createWindow = () => {
   mainWindow = new BrowserWindow({
-    backgroundColor: '#F7F7F7',
+    // backgroundColor: '#F7F7F7',
     minWidth: 880,
     show: false,
     titleBarStyle: 'default', // 'default' | 'hidden' | 'hiddenInset' | 'customButtonsOnHover'

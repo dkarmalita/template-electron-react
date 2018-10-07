@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development --hot",
     "_start": "concurrently \"cross-env BROWSER=none webpack-dev-server --mode=production\" \"wait-on http://localhost:3000 && electron .\"",
-    "start": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "start": "concurrently  --kill-others \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
     "pack": "electron-builder --dir",
     "dist": "npx build --x64 --macos --win --linux --c.extraMetadata.main=build/electron.js -p always",
     "test": "jest"
